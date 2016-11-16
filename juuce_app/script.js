@@ -31,3 +31,13 @@ $('#openMenu').on('click', function(evt) {
 $('.buttons > div').on('click', function(evt) {
 	$(this).toggleClass('selected');
 });
+
+
+$(".dropdown").on("click", function(){
+  $(this).toggleClass("flip");
+})
+
+$(".back ul li").on("click", function(){
+    var val = $(this).text();
+  $(this).closest('.dropdown').find('.front').text(val);
+});

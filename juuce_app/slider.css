@@ -98,6 +98,16 @@
   display: block;
 }
 
+.content[data-pos="0"] .slider__slide:nth-child(1) .dropdown {
+  display: block;
+}
+.content[data-pos="1"] .slider__slide:nth-child(2) .dropdown {
+  display: block;
+}
+.content[data-pos="2"] .slider__slide:nth-child(3) .dropdown {
+  display: block;
+}
+
 .content[data-pos="0"] > div {
   background-color: rgba(255, 87, 34,.65);
 }
