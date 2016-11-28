@@ -1,7 +1,11 @@
-# JUUCE App
-This is a product card concept for IOS, It was found at UpLabs and the credit for the design is to [Sergii Petakh](https://dribbble.com/sergiipetakh). Here is the [Concept](https://ios.uplabs.com/posts/juuce-app-product-card-animation) and here the [Pen](http://codepen.io/emoreno911/pen/vyJvpB).
+# \#UIToCode: JUUCE App
+This is a product card concept for IOS, It was found at UpLabs and the credit for the design is to [Sergii Petakh](https://dribbble.com/sergiipetakh). Here is the [Concept](https://ios.uplabs.com/posts/juuce-app-product-card-animation) and here the [:video_game: Working Prototype](http://codepen.io/emoreno911/pen/vyJvpB) on [CodePen](http://codepen.io).
 
-![App Concept](https://d13yacurqjgara.cloudfront.net/users/1128601/screenshots/3081415/juuce.gif)
+<table>
+  <td style="border:"><img src="img/sidebar.JPG" alt="sidebar" /></td>
+  <td style="border:none"><img src="img/content2.JPG" alt="app screen" /></td>
+  <td style="border:none"><img src="img/content3.JPG" alt="app screen" /></td>
+</table>
 
 ### Tricks
 - **Sidebar transition**
