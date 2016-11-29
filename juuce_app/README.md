@@ -9,13 +9,13 @@ This is a product card concept for IOS, It was found at UpLabs and the credit fo
 
 ### Tricks
 - **Sidebar transition**
-	Theres two main divs for the layout [sidebar & content], the content div is over the sidebar so to obtain the desired animation just use the transform property to translate and scale the content.
+	There are two main divs for the layout [sidebar & content], the content div is over the sidebar so, to obtain the desired animation just use the transform property to translate and scale the content.
 - **App title gradient**
 	Use the -webkit-background-clip property
 - **Triangle div**
 	https://css-tricks.com/snippets/css/css-triangle/
 - **Background gradient transition**
-	This is possible by using two divs(layers), the bottom one is a linear gradient from Black to White and the top layer has the color you like to show with the alpha set to 0.7 and the transition property setted for background-color.
+	This is possible by using two divs(layers), the bottom one is a linear gradient from Black to White, the top layer has the color you would like to show with the alpha set to 0.7 and the transition property setted for background-color.
 - **Slider**
 	Based on Tobias Reich's [Pen](http://codepen.io/electerious/pen/JXNEPr)
 - **Fonticons**
