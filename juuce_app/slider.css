@@ -81,13 +81,13 @@
 }
 
 .content[data-pos="0"] .slider__slide:nth-child(1) .picture span {
-  left: -100px;
+  left: -160px;
 }
 .content[data-pos="1"] .slider__slide:nth-child(2) .picture span {
-  left: -100px;
+  left: -160px;
 }
 .content[data-pos="2"] .slider__slide:nth-child(3) .picture span {
-  left: -40px;
+  left: -100px;
 }
 
 .content[data-pos="0"] .slider__slide:nth-child(1) .buttons {
