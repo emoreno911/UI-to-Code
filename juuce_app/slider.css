@@ -111,11 +111,11 @@
 }
 
 .content[data-pos="0"] > div {
-  background-color: rgba(255, 87, 34,.65);
+  background-color: rgba(255, 87, 34,.64);
 }
 .content[data-pos="1"] > div {
   background-color: rgba(13,148,20,.4);
 }
 .content[data-pos="2"] > div {
-  background-color: rgba(209,27,27,.65);
+  background-color: rgba(209,27,27,.64);
 }
