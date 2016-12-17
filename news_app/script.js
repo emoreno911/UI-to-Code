@@ -1,23 +1,42 @@
 'use strict';
 
-var headline = [0,2,1,3,2,0,2,2],
+var headlines = [2,3,0,3,2,0,2,2],
 	listItems = [],
 	listDots = [];
 
-sources.forEach(function(el, i) {
-	let {name, id} = el;
-	let {title, urlToImage, publishedAt} = articles[id][headline[i]];
-	let itemList = `<div class="slider__slide" style="background-image: url(${urlToImage})" data-name="${name}">
+sources.forEach(function(source, i) {
+	let {name, id} = source;
+	let articleList = articles[id].map((art) => {
+		let cname = (art.description && art.description.length > 120)? 'compact' : '',
+			description = (art.description != null)? art.description : '';
+
+		return `<li class="${cname}">
+			<div>
+				<h5>${art.title}</h5>
+				<p>${description}</p>
+			</div>
+			<img src="${art.urlToImage}" alt="${art.title}" onerror="hideme(this)">
+		</li>`;
+	});
+	
+
+	// headline + content
+	let {title, urlToImage, publishedAt} = articles[id][headlines[i]];
+	let itemList = `<div class="slider__slide" data-name="${name}">
             <div class="headline">
-              <p><img src="${el.urlsToLogos.small}" alt="${name}"></p>
+              <div class="backdrop" style="background-image: url(${urlToImage})"></div>
+              <p><img src="${source.urlsToLogos.small}" alt="${name}"></p>
               <blockquote>
                 ${title}
               </blockquote>
-              <small>${publishedAt}</small>
+              <small>${formatDate(publishedAt)}</small>
+            </div>
+            <div class="content">
+            	<ul>${articleList.join('')}</ul>
             </div>
           </div>`;
 
-    listDots.push(`<a href="#" class="slider__dot" data-pos="${i}"></a>`);
+    listDots.push(`<a href="javascript:void(0)" class="slider__dot" data-pos="${i}" onclick="Slider.move(${i})"></a>`);
     listItems.push(itemList);
 });
 
@@ -25,15 +44,24 @@ listDots.push(`<a href="#" class="slider__indicator"></a>`);
 document.querySelector('.slider__dots').innerHTML = listDots.join('');
 document.querySelector('.slider__slides').innerHTML = listItems.join('');
 
-var contentElem = document.querySelector('.wrapper');
+var contentElem = document.querySelector('.wrapper'),
+	headerElem = document.querySelector('header');
 
-var hammertime = new Hammer(contentElem);
-hammertime.on("swipeleft swiperight", function(evt) {
+var swipeLeftRight = new Hammer(contentElem);
+swipeLeftRight.on("swipeleft swiperight", function(evt) {
     if(evt.type == 'swipeleft')
         Slider.next(); 
     else if (evt.type == 'swiperight')
         Slider.prev();
 });
+
+// remove class 'open'
+headerElem.addEventListener('click', function(evt) {
+	if(evt.target.className != 'slider__dot')
+		contentElem.className = 'wrapper';
+}, false);
+
+var headlinePanUp = [];
 
 var Slider = {
 	init: function(selector) {
@@ -51,7 +79,12 @@ var Slider = {
 		this.slider.style.width = this.sliderWidth;
 		this.slides.forEach((slide, i) => {
 			slide.style.width = this.frameWidth;
-			slide.style.display = 'flex';
+
+			// show the news list
+			headlinePanUp[i] = new Hammer(slide.querySelector('.headline'));
+			headlinePanUp[i].on('panup', (e) => {
+				contentElem.className = 'wrapper open';
+			}); 
 		});
 
 		this.postTransition();
@@ -85,64 +118,35 @@ var Slider = {
 
 	postTransition: function() {
 		this.dotIndicator.style.left = `${1.3 * this.currentSlide}em`;
-		var name = this.slides[this.currentSlide].getAttribute('data-name');
-		document.querySelector('header h3').innerText = name;
-		document.querySelector('.wrapper').setAttribute('data-pos', this.currentSlide);
+		this.slides.forEach((el) => el.className = el.className.replace('slide_active', ''));
+		
+		var slide = this.slides[this.currentSlide];		
+		slide.className += " slide_active";
+		
+		headerElem.querySelector('h3').innerText = slide.getAttribute('data-name');
+		contentElem.setAttribute('data-pos', this.currentSlide);
+	}
+};
+
+
+function hideme(el) {
+	el.src = "http://placehold.it/250x125";
+}
+
+function formatDate(date_string) {
+	var date = new Date(date_string),
+		d = date.toUTCString().split(' ');
+
+	return `${d[1]} ${d[2]} ${d[3]}`;
+}
+
+// forEach fallback
+Object.prototype.forEach = function(callback) {
+	for (var i = 0, len = this.length ; i < len; i++) {
+		callback(this[i], i);
 	}
 };
 
 Slider.init('.slider');
 
-
-/*let slideCount = 8,
-    positionElement = document.querySelector('.wrapper'),
-    sliderElement = document.querySelector('.slider__slides'),
-    slides = document.querySelectorAll('.slider__slide'),
-    wrapWidth = positionElement.clientWidth;
-
-let step = 5,
-    maxSpan = 100,
-    currentSpan = 0,
-    currentSlide = 0;
-
-let hammertimex = new Hammer(sliderElement);
-hammertimex.on("panleft panright", function(evt) {
-  
-	if(currentSpan - 5 < 0) {
-		currentSpan = 5;
-		return;
-	} 
-
-	if(currentSpan > wrapWidth * (slides.length-1)) {
-		currentSpan = wrapWidth * (slides.length-1);
-		return;
-	} 
-		
-
-	if(evt.type == 'panleft') {
-		currentSpan += step;
-		sliderElement.style.transform = `translateX(-${currentSpan}px)`;
-		slides[currentSlide].style.backgroundPositionX = `-${currentSpan*10/wrapWidth}px`;
-
-		let nextCheckpoint = (currentSlide + 1) * wrapWidth;
-		if (currentSpan > nextCheckpoint) {
-			currentSlide++;
-			document.querySelector('.slider__indicator').style.left = `${1.3 * currentSlide}em`;
-		}
-	 
-	} 
-
-	if (evt.type == 'panright') {
-	currentSpan -= step;
-	sliderElement.style.transform = `translateX(-${currentSpan}px)`;
-	slides[currentSlide].style.backgroundPositionX = `-${currentSpan*10/wrapWidth}px`;
-
-	let prevCheckpoint = (currentSlide) * wrapWidth;
-		if (currentSpan < prevCheckpoint) {
-			currentSlide--;
-			document.querySelector('.slider__indicator').style.left = `${1.3 * currentSlide}em`;
-		}
-	}
-
-
-});*/
+/** Deleted code: lateral scroll with panLeftRight [first news commit] **/
