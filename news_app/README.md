@@ -1,7 +1,7 @@
 # \#UIToCode: News App
 A news app inspired by [Jaret Zen](https://dribbble.com/JaretZen) here you can transition between the featured news by swipping right or left, or by clicking on any of the slider indicators, if you swipeup on a featured article the app will show you more news for that source. Click on the header to go back to the headlines.
 
-Here is the [Concept](https://material.uplabs.com/posts/news-app-4b47c474-3bfb-4f75-872c-70c26637f25c) and here the [:video_game: Working Prototype](http://codepen.io/emoreno911/pen/Ypdboy) on [CodePen](http://codepen.io).
+Here is the [Concept](https://material.uplabs.com/posts/news-app-4b47c474-3bfb-4f75-872c-70c26637f25c) and here the [:video_game: Working Prototype](http://codepen.io/emoreno911/pen/jVdVRa) on [CodePen](http://codepen.io).
 
 <table>
   <td style="border:none"><img src="img/headline2.JPG" alt="headline" /></td>
