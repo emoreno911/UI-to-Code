@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--http://zavoloklom.github.io/material-design-iconic-font/icons.html-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <title>Material Music</title>
+  </head>
+  <body>
+
+    <div class="wrapper" data-pos="0">
+
+      <div class="list">
+        <div class="player-indicator">
+          <div class="playb"></div>
+          <div class="bars">
+            <div></div><div></div><div></div><div></div><div></div>
+          </div>
+        </div>
+        <header>
+          <div><i class="zmdi zmdi-arrow-left"></i></div>
+          <h3>Favourites</h3>
+          <div><i class="zmdi zmdi-more-vert"></i></div>
+        </header>
+        <section></section>
+      </div>
+
+      <div class="detail">
+        <div class="info">
+          <i class="zmdi zmdi-close close"></i>
+          <div class="slider">
+            <!-- slides here -->
+          </div>
+        </div>
+        <div class="player">
+          <div class="controls">
+            <i class="zmdi zmdi-shuffle"></i>
+            <i class="zmdi zmdi-fast-rewind"></i>
+            <div class="playbtn"><span></span></div>
+            <i class="zmdi zmdi-fast-forward"></i>
+            <i class="zmdi zmdi-replay"></i>
+          </div>
+          <div class="track">
+            <audio class="audio" preload="true"></audio>
+            <canvas class="analyser"></canvas>
+            <div class="progress">
+              <div class="bar"></div>
+            </div>
+            <div class="counter"><span class="begin">0:00</span><span class="end">0:00</span></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/domtastic/0.12/domtastic.min.js"></script>
+    <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="player.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>

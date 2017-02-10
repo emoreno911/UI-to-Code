@@ -76,9 +76,9 @@ var Slider = {
 		this.slideCount = this.slides.length;
 		this.sliderWidth = this.frameWidth * this.slideCount;
 
-		this.slider.style.width = this.sliderWidth;
+		this.slider.style.width = this.sliderWidth + 'px';
 		this.slides.forEach((slide, i) => {
-			slide.style.width = this.frameWidth;
+			slide.style.width = this.frameWidth + 'px';
 
 			// show the news list
 			headlinePanUp[i] = new Hammer(slide.querySelector('.headline'));
@@ -148,5 +148,12 @@ Object.prototype.forEach = function(callback) {
 };
 
 Slider.init('.slider');
+Slider.move(1);
 
 /** Deleted code: lateral scroll with panLeftRight [first news commit] **/
+
+/******************************************
+ * Swipe Left or Right to read other sources 
+ * Swipe Up for more news
+ * Click on Header to go back to Headlines
+ *******************************************/
