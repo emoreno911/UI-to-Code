@@ -1,7 +1,7 @@
 # \#UIToCode: Material Music
 UIToCode is back in town and it comes supercharged with this music app concept from [Vitaly Silkin](https://material.uplabs.com/posts/material-music). It's supercharged because I add some UI and UX improvements to make this good design even better and it's also fully functional.
 
-Here is the [Concept](https://material.uplabs.com/posts/material-music) and here the [:video_game: Working Prototype](http://codepen.io/emoreno911/) on [CodePen](http://codepen.io).
+Here is the [Concept](https://material.uplabs.com/posts/material-music) and here the [:video_game: Working Prototype](http://codepen.io/emoreno911/pen/zNMOew) on [CodePen](http://codepen.io).
 
 <table>
   <td style="border:none"><img src="img/list1.JPG" alt="Player List" /></td>
