@@ -4,8 +4,9 @@ UIToCode is back in town and it comes supercharged with this music app concept f
 Here is the [Concept](https://material.uplabs.com/posts/material-music) and here the [:video_game: Working Prototype](http://codepen.io/emoreno911/) on [CodePen](http://codepen.io).
 
 <table>
-  <td style="border:none"><img src="img/list.JPG" alt="Player List" /></td>
-  <td style="border:none"><img src="img/item1.JPG" alt="Player" /></td>
+  <td style="border:none"><img src="img/list1.JPG" alt="Player List" /></td>
+  <td style="border:none"><img src="img/player.JPG" alt="Player" /></td>
+  <td style="border:none"><img src="img/list2.JPG" alt="Player List" /></td>
 </table>
 
 ### Tricks
@@ -27,10 +28,3 @@ Here is the [Concept](https://material.uplabs.com/posts/material-music) and here
 	[Pexels.com](http://pexels.com/)
 - **Fonticons**
 	[Material Design Iconic Font](http://zavoloklom.github.io/material-design-iconic-font/icons.html) created by Sergey Kupletsky
-
-- list image animation top
-- current slide with data-position
-- animation timing and sync
-- skew with background position
-- player and Audio API
-- FFT analyser (canvas vs html)
