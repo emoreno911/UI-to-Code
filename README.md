@@ -6,3 +6,6 @@ This is a product card concept for IOS, I found it at UpLabs and the credit for 
 
 ### Concept 2: NEWS App
 A news app concept inspired by [Jaret Zen](https://dribbble.com/JaretZen), here you can transition between the featured news by swipping right or left, or by clicking on any of the slider indicators, if you swipeup on a featured article the app will show you more news for that source. Here is the [Concept](https://material.uplabs.com/posts/news-app-4b47c474-3bfb-4f75-872c-70c26637f25c), here's the [Pen](http://codepen.io/emoreno911/pen/BQMYja) and here are the [:books: Details](/news_app/README.md).
+
+### Concept 3: Material Music
+UIToCode is back in town and it comes supercharged with this music app concept from [Vitaly Silkin](https://material.uplabs.com/posts/material-music). It's supercharged because I add some UI and UX improvements to make this good design even better and it's also fully functional. Here is the [Concept](https://material.uplabs.com/posts/material-music), here's the [Pen](http://codepen.io/emoreno911/pen/zNMOew) and here are the [:books: Details](/material_music/README.md).
