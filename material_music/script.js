@@ -1,13 +1,13 @@
 var listItems = [],
 	detailItems = [],
-	playlist = [
-		{"title":"Snowflake - Living Nightmare","src":"media/snowflake.mp3","img":"media/snowflake.jpg"},
-		{"title":"Bensound - Dubstep","src":"media/dubstep.mp3","img":"media/dubstep2.jpg"},
-    {"title":"Secret Of Life - 42","src":"media/track3.mp3","img":"media/track3.jpeg"},
-		{"title":"Bensound - Retrosoul","src":"media/retrosoul.mp3","img":"media/retrosoul.jpg"},
-		{"title":"Snowflake - Holiday Funky Blues","src":"media/snowflake3.mp3","img":"media/snowflake2.jpg"},
-		{"title":"Bensound - Happy Rock","src":"media/happyrock.mp3","img":"media/happyrock.jpg"}
-	];
+  playlist = [
+    {"time":"178","title":"Snowflake - Living Nightmare", "img":"http://dl.dropbox.com/s/wacl6yr2b32sqds/snowflake.jpg", "src":"http://dl.dropbox.com/s/4ef8ana3rsm7sdu/snowflake.mp3"},
+    {"time":"124","title":"Bensound - Dubstep","img":"http://dl.dropbox.com/s/7a1psxm2i4m644k/dubstep2.jpg","src":"http://dl.dropbox.com/s/ebsjr0uq9zfg9x0/dubstep.mp3"},
+    {"time":"78","title":"Secret Of Life - 42","img":"http://dl.dropbox.com/s/z1j07kiqo9r2mj9/track3.jpeg","src":"http://dl.dropbox.com/s/goyhvi2np0mov5n/track3.mp3"},
+    {"time":"216","title":"Bensound - Retrosoul","img":"http://dl.dropbox.com/s/e2b9l3cbjy4wthw/retrosoul.jpg","src":"http://dl.dropbox.com/s/lfc7z6kz2q1k2vo/retrosoul.mp3"},
+    {"time":"175","title":"Snowflake - Holiday Funky Blues","img":"http://dl.dropbox.com/s/myu3b9qtf74sz3i/snowflake2.jpg","src":"http://dl.dropbox.com/s/kwy27cjasc6yodw/snowflake3.mp3"},
+    {"time":"105","title":"Bensound - Happy Rock","img":"http://dl.dropbox.com/s/fz8452movdjnfe8/happyrock.jpg","src":"http://dl.dropbox.com/s/03abwi15hveg4yj/happyrock.mp3"}
+  ];
 
 playlist.forEach(function(el, i) {
 	let [artist, title] = el.title.split('-');
@@ -140,11 +140,6 @@ hammertime.on("panleft panright panstart panend", function(evt) {
     currentSpan = 0;
   }
 
-  // sync the selected list item with the current detail item
-	$listItemImg
-		.removeClass('open')
-		.eq(currentSlide)
-		.addClass('open');
 });
 
 
@@ -155,6 +150,12 @@ function next() {
   currentSlide = newSlide;
   currentSpan = 0;
   _player.changeTrack(currentSlide, true);
+
+  // sync the selected list item with the current detail item
+  $listItemImg
+    .removeClass('open')
+    .eq(currentSlide)
+    .addClass('open');
 }
 
 function prev() {
@@ -164,10 +165,16 @@ function prev() {
   currentSlide = newSlide;
   currentSpan = 0;
   _player.changeTrack(currentSlide, true);
+
+  // sync the selected list item with the current detail item
+  $listItemImg
+    .removeClass('open')
+    .eq(currentSlide)
+    .addClass('open');
 }
 
 function formatTime(seconds) {
-  minutes = Math.floor(seconds / 60);
+  let minutes = Math.floor(seconds / 60);
     minutes = (minutes >= 10) ? minutes : "" + minutes;
     seconds = Math.floor(seconds % 60);
     seconds = (seconds >= 10) ? seconds : "0" + seconds;

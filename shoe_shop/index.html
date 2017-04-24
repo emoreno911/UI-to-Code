@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shoe Shop</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="wrap" data-pos="0">
+		<div class="wrap-clip"></div>
+		<div class="content">
+			<div class="top">
+				<img src="https://dl.dropbox.com/s/6u64ty9fp2tyi4y/adiddas.png" class="logo">
+				<div class="menu">
+					<a href="javascript:void(0)">MEN</a>
+					<a href="javascript:void(0)">WOMEN</a>
+					<a href="javascript:void(0)">KIDS</a>
+				</div>
+			</div>
+			<div class="bar">
+				<div class="cart">
+					<i class="zmdi zmdi-shopping-cart"></i>
+					<div class="badge"><span>0</span></div>
+				</div>
+				<a href="javascript:void(0)">
+					<img src="https://dl.dropbox.com/s/5nhxsba4lsb1h3g/shoe-black.png" alt="shoe-black">
+				</a>
+				<a href="javascript:void(0)">
+					<img src="https://dl.dropbox.com/s/502qoc9qv6uqrve/shoe-red.png" alt="shoe-red">
+				</a>
+				<a href="javascript:void(0)">
+					<img src="https://dl.dropbox.com/s/znovc1vt9dvfskg/shoe-grey.png" alt="shoe-grey">
+				</a>
+			</div>
+			<div class="products">
+				<div class="products-wrap">
+					<div class="item">
+						<div class="title">BLACK</div>
+						<div class="image">
+							<img src="https://dl.dropbox.com/s/5nhxsba4lsb1h3g/shoe-black.png" class="shoe">
+						</div>
+						<div class="info">
+							<h2>BLACK SHOE</h2>
+							<h3>$ 225</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa. </p><p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							<button class="btn" type="button">
+								<span><i class="zmdi zmdi-shopping-cart-plus"></i></span>
+							</button>
+						</div>
+					</div>
+					<div class="item">
+						<div class="title">RED</div>
+						<div class="image">
+							<img src="https://dl.dropbox.com/s/502qoc9qv6uqrve/shoe-red.png" class="shoe">
+						</div>
+						<div class="info">
+							<h2>RED SHOE</h2>
+							<h3>$ 235</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa. </p><p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							<button class="btn" type="button">
+								<span><i class="zmdi zmdi-shopping-cart-plus"></i></span>
+							</button>
+						</div>
+					</div>
+					<div class="item">
+						<div class="title">GRAY</div>
+						<div class="image">
+							<img src="https://dl.dropbox.com/s/znovc1vt9dvfskg/shoe-grey.png" class="shoe">
+						</div>
+						<div class="info">
+							<h2>GRAY SHOE</h2>
+							<h3>$ 200</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa. </p><p> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							<button class="btn" type="button">
+								<span><i class="zmdi zmdi-shopping-cart-plus"></i></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		let $wrap = document.querySelector('.wrap'),
+			$opts = document.querySelectorAll('.bar a');
+
+		Array.prototype.forEach.call($opts, (el, i) => {
+			el.addEventListener('click', function (event) {
+				$wrap.setAttribute('data-pos', i);			  
+			});
+		});
+
+		let count = 0,
+			$btns = document.querySelectorAll('.btn'),
+			$cart = document.querySelector('.cart');
+
+		Array.prototype.forEach.call($btns, (el, i) => {
+			el.addEventListener('click', function (event) {
+				$cart.classList.add('add');
+				$cart.querySelector('span').innerText = ++count;
+				setTimeout(() => {
+					$cart.classList.remove('add');
+				}, 1500);			  
+			});
+		});
+
+	</script>
+
+</body>
+</html>
