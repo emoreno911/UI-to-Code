@@ -17,7 +17,8 @@ body {
 	justify-content: center;
 }
 
-.wrap-clip {
+/** With clip-path (It doesn't work on Firefox) **/
+/*.wrap-clip {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -26,6 +27,19 @@ body {
 	background-color: #607D8B;
 	-webkit-clip-path: polygon(0 25%, 0% 100%, 75% 100%);
 	clip-path: polygon(0 25%, 0% 100%, 75% 100%);
+	transition: all 0.8s ease-in-out;
+}*/
+
+.wrap-clip {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 500px  0 0 600px;
+	border-color:  #e5e5e5 transparent transparent transparent;
+	margin-top: -1px;
 	transition: all 0.8s ease-in-out;
 }
 
