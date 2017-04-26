@@ -9,3 +9,6 @@ A news app concept inspired by [Jaret Zen](https://dribbble.com/JaretZen), here 
 
 ### Concept 3: Material Music
 UIToCode is back in town and it comes supercharged with this music app concept from [Vitaly Silkin](https://material.uplabs.com/posts/material-music). It's supercharged because I add some UI and UX improvements to make this good design even better and it's also fully functional. Here is the [Concept](https://material.uplabs.com/posts/material-music), here's the [Pen](http://codepen.io/emoreno911/pen/zNMOew) and here are the [:books: Details](/material_music/README.md).
+
+### Concept 4: Shoe Shop
+An eshop inspired by [Youssef Eid](https://site.uplabs.com/youssefeid), to this cool design I have added a carousel with 3D transitons when you navigate between shop items. You can also add items to the cart. Here is the [Concept](https://site.uplabs.com/posts/yeezy-boost), here's the [Pen](https://codepen.io/emoreno911/pen/Gmjgvb) and here are the [:books: Details](/shoe_shop/README.md).
